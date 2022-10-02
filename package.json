@@ -25,8 +25,7 @@
     "test": "jest",
     "lint": "eslint .",
     "typescript": "tsc --noEmit",
-    "prepush": "npm run lint && npm run test",
-    "postinstall": "rm -rf .git/hooks/pre-push && node node_modules/husky/bin/install.js && rm -rf .git/hooks/pre-commit"
+    "precommit": "npm run lint . && npm test"
   },
   "dependencies": {
     "@types/jest": "^29.1.1",
@@ -47,12 +46,6 @@
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "^0.72.1",
     "react-test-renderer": "18.1.0"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "",
-      "pre-commit": "npm run lint"
-    }
   },
   "jest": {
     "preset": "react-native"
