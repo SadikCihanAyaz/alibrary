@@ -5783,6 +5783,19 @@
   "resolved" "https://registry.npmjs.org/react-native-gradle-plugin/-/react-native-gradle-plugin-0.70.3.tgz"
   "version" "0.70.3"
 
+"react-native-ui-form@^0.0.1":
+  "integrity" "sha512-0sEg5x9VC9qkZPV1K1JKKMWELCqZuBobxibrEoH8cU1btD3xI7iY10u/zwhK1cml69a/3AQzlm2wmP0IvamxLw=="
+  "resolved" "https://registry.npmjs.org/react-native-ui-form/-/react-native-ui-form-0.0.1.tgz"
+  "version" "0.0.1"
+  dependencies:
+    "@types/jest" "^29.1.1"
+    "@types/react" "^18.0.21"
+    "@types/react-native" "^0.70.4"
+    "@types/react-test-renderer" "^18.0.0"
+    "react" "18.1.0"
+    "react-native" "0.70.1"
+    "typescript" "^4.8.4"
+
 "react-native@0.70.1":
   "integrity" "sha512-AUh4NZLFdvyjSiYWCtTROCrC7loxeeZ/TzBnkZwp3kb9XmMu7/kzvWn2c5sEMnzW7X/0JSul8jXexGVdpnCoSA=="
   "resolved" "https://registry.npmjs.org/react-native/-/react-native-0.70.1.tgz"
