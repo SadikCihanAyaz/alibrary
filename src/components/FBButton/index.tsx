@@ -7,6 +7,7 @@ interface FBButtonProp {
 
 const FBButton: React.FC<FBButtonProp> = props => {
   const {label} = props;
+  
 
   return (
     <View style={{marginTop: 100}}>
