@@ -6,7 +6,7 @@
     "url": "https://github.com/SadikCihanAyaz/alibrary"
   },
   "license": "MIT",
-  "author": "Sadık Cihan Ayaz",
+  "author": "Sadik Cihan Ayaz",
   "bugs": {
     "url": "https://github.com/SadikCihanAyaz/alibrary/issues"
   },
@@ -33,16 +33,17 @@
     "@types/react-native": "^0.70.4",
     "@types/react-test-renderer": "^18.0.0",
     "react": "18.1.0",
+    "react-hook-form": "^7.36.1",
     "react-native": "0.70.1",
     "typescript": "^4.8.4"
   },
   "devDependencies": {
-    "husky": "^8.0.1",
     "@babel/core": "^7.12.9",
     "@babel/runtime": "^7.12.5",
     "@react-native-community/eslint-config": "^2.0.0",
     "babel-jest": "^26.6.3",
     "eslint": "^7.32.0",
+    "husky": "^8.0.1",
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "^0.72.1",
     "react-test-renderer": "18.1.0"
