@@ -1,5 +1,7 @@
 import React from 'react';
 import {View, Text, Pressable} from 'react-native';
+import style from './style';
+import * as Common from '../../utils/Style';
 
 interface Props {
   onPress(): void;
@@ -7,10 +9,14 @@ interface Props {
 }
 
 const IButton: React.FC<Props> = props => {
+  const {onPress, buttonTitle} = props;
+
   return (
     <View>
-      <Pressable onPressIn={props.onPress}>
-        <Text>{props.buttonTitle}</Text>
+      <Pressable
+        style={[style.buttonStyle, Common.contentCenter()]}
+        onPressIn={onPress}>
+        <Text>{buttonTitle}</Text>
       </Pressable>
     </View>
   );
