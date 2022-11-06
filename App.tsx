@@ -26,9 +26,9 @@ const App = () => {
       <FBButton label="123" />
       <ITextInput
         name={'firstName'}
-        text={'Şifre'}
+        text={'Password'}
         textVal={val => {
-          console.log('val', val);
+          console.log('value', val);
         }}
         defaultValue={''}
         control={control}
@@ -37,7 +37,11 @@ const App = () => {
         placeHolder={''}
         required={false}
       />
-      <IButton onPress={handleSubmit(onSubmit)} buttonTitle="Deneme" />
+      <IButton
+        onPress={handleSubmit(onSubmit)}
+        buttonTitle="Deneme"
+        testID="btnI"
+      />
     </View>
   );
 };
