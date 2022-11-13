@@ -1,8 +1,9 @@
 import React from 'react';
-import {ScrollView, View} from 'react-native';
+import {ScrollView} from 'react-native';
 import ITextInput from './src/components/ITextInput';
 import {useForm} from 'react-hook-form';
 import IButton from './src/components/IButton';
+import {IView, IText} from './src/components';
 
 type FormValues = {
   firstName: string;
@@ -32,15 +33,16 @@ const App = () => {
   };
 
   return (
-    <View>
+    <IView>
       <ScrollView>
+        <IView style={{marginTop: 50}} />
+        <IText style={{fontSize: 50}}>Deneme</IText>
         <ITextInput
           name={'firstName'}
           headerText={'Password'}
           textVal={val => {
             console.log('value', val);
           }}
-          style={{container: {marginTop: 410}}}
           errorMsg={errorMsg}
           control={control}
           error={errors.firstName as unknown as string}
@@ -55,7 +57,7 @@ const App = () => {
           testID="btnI"
         />
       </ScrollView>
-    </View>
+    </IView>
   );
 };
 
