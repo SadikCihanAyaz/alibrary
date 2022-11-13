@@ -1,6 +1,5 @@
 import React from 'react';
-import FBButton from './src/components/FBButton';
-import {View} from 'react-native';
+import {ScrollView, View} from 'react-native';
 import ITextInput from './src/components/ITextInput';
 import {useForm} from 'react-hook-form';
 import IButton from './src/components/IButton';
@@ -21,27 +20,41 @@ const App = () => {
     console.log('data', data);
   };
 
+  const errorMsg = (value: any) => {
+    console.log('data' + value);
+    if (value.length < 1) {
+      return 'message 5';
+    } else if (value.length < 6) {
+      return 'message 6';
+    } else {
+      return true;
+    }
+  };
+
   return (
     <View>
-      <FBButton label="123" />
-      <ITextInput
-        name={'firstName'}
-        text={'Password'}
-        textVal={val => {
-          console.log('value', val);
-        }}
-        defaultValue={''}
-        control={control}
-        error={errors.firstName as unknown as string}
-        errorText={errors?.firstName?.message as unknown as string}
-        placeHolder={''}
-        required={false}
-      />
-      <IButton
-        onPress={handleSubmit(onSubmit)}
-        buttonTitle="Deneme"
-        testID="btnI"
-      />
+      <ScrollView>
+        <ITextInput
+          name={'firstName'}
+          headerText={'Password'}
+          textVal={val => {
+            console.log('value', val);
+          }}
+          style={{container: {marginTop: 410}}}
+          errorMsg={errorMsg}
+          control={control}
+          error={errors.firstName as unknown as string}
+          errorText={errors?.firstName?.message as unknown as string}
+          placeHolder={'Test Place Holder'}
+          required={true}
+          secureText={false}
+        />
+        <IButton
+          onPress={handleSubmit(onSubmit)}
+          buttonTitle="Test Button Title"
+          testID="btnI"
+        />
+      </ScrollView>
     </View>
   );
 };

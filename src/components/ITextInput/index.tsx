@@ -3,62 +3,86 @@ import {TextInput, View, Text} from 'react-native';
 import styles from './style';
 import {Controller} from 'react-hook-form';
 
-interface Props {
-  name: string;
-  text: string;
-  control: any;
-  placeHolder: string;
-  required: boolean;
-  defaultValue: string;
-  error: string;
-  errorText: string;
-  textVal: (text: string) => void;
-}
-const ITextInput: React.FC<Props> = props => {
-  const {name, control, placeHolder, defaultValue} = props;
-
-  const errorMsg = () => {
-    if (props.errorText === '0') {
-      return 'message 1';
-    }
-    if (props.errorText === '1') {
-      return 'message 2';
+/*
+  const errorMsg = (value: any) => {
+    console.log('data' + value);
+    if (value.length < 1) {
+      return 'message 5';
+    } else if (value.length < 6) {
+      return 'message 6';
+    } else {
+      return true;
     }
   };
 
   return (
     <View>
-      <View>
-        <Text>{props.text}</Text>
-      </View>
-      {props.errorText ? (
-        <View>
-          <Text>{errorMsg()}</Text>
+      <ITextInput
+        name={'firstName'}
+        headerText={'Password'}
+        textVal={val => {
+          console.log('value', val);
+        }}
+        errorMsg={errorMsg}
+        control={control}
+        error={errors.firstName as unknown as string}
+        errorText={errors?.firstName?.message as unknown as string}
+        placeHolder={'Test Place Holder'}
+        required={true}
+        secureText={false}
+      />
+    </View>
+  );
+  */
+
+interface Props {
+  name: string;
+  headerText?: string;
+  control: any;
+  placeHolder?: string;
+  secureText?: boolean;
+  required?: boolean;
+  error: string;
+  errorText: string;
+  errorMsg: any;
+  textVal: (text: string) => void;
+  style?: any;
+}
+const ITextInput: React.FC<Props> = props => {
+  const {
+    name,
+    control,
+    placeHolder,
+    secureText = false,
+    required = false,
+    headerText,
+    style,
+  } = props;
+
+  return (
+    <View style={[style?.container]}>
+      {headerText ? (
+        <View style={[style?.headerTextContainer]}>
+          <Text style={[style?.headerText]}>{headerText}</Text>
         </View>
       ) : null}
-      <View>
+      {props.errorText && required ? (
+        <View style={[style?.errorTextContainer]}>
+          <Text style={[style?.errorText]}>{props.errorText}</Text>
+        </View>
+      ) : null}
+      <View style={[style?.bodyContainer]}>
         <Controller
           name={name}
-          defaultValue={defaultValue}
           control={control}
           rules={{
-            validate: value => {
-              if (value.length === 0) {
-                console.log('work 0');
-                return '0';
-              } else if (value.length < 6) {
-                console.log('work 6');
-                return '1';
-              } else {
-                return true;
-              }
-            },
+            validate: value => props.errorMsg(value),
           }}
           render={({field: {onChange}}) => (
             <TextInput
-              secureTextEntry={true}
+              secureTextEntry={secureText}
               placeholder={placeHolder}
-              style={styles.textInputFocus}
+              style={[styles.textInputFocus, style?.textInput]}
               autoCapitalize="none"
               onChangeText={passwordText => {
                 onChange(passwordText);
