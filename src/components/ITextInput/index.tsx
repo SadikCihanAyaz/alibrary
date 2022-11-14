@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {TextInput, View, Text} from 'react-native';
 import styles from './style';
 import {Controller} from 'react-hook-form';
@@ -46,6 +46,7 @@ interface Props {
   errorText: string;
   errorMsg: any;
   textVal: (text: string) => void;
+  onFocus?: (type: boolean) => void | undefined;
   style?: any;
 }
 const ITextInput: React.FC<Props> = props => {
@@ -58,17 +59,22 @@ const ITextInput: React.FC<Props> = props => {
     headerText,
     style,
   } = props;
+  const [isFocus, setIsFocus] = useState(false);
 
   return (
     <View style={[style?.container]}>
       {headerText ? (
         <View style={[style?.headerTextContainer]}>
-          <Text style={[style?.headerText]}>{headerText}</Text>
+          <Text style={[styles.headerText, style?.headerText]}>
+            {headerText}
+          </Text>
         </View>
       ) : null}
       {props.errorText && required ? (
         <View style={[style?.errorTextContainer]}>
-          <Text style={[style?.errorText]}>{props.errorText}</Text>
+          <Text style={[styles.headerTextError, style?.errorText]}>
+            {props.errorText}
+          </Text>
         </View>
       ) : null}
       <View style={[style?.bodyContainer]}>
@@ -82,11 +88,19 @@ const ITextInput: React.FC<Props> = props => {
             <TextInput
               secureTextEntry={secureText}
               placeholder={placeHolder}
-              style={[styles.textInputFocus, style?.textInput]}
+              style={
+                isFocus
+                  ? [styles.textInputFocus, style?.textInputFocus]
+                  : props.errorText
+                  ? [styles.textInputError, style?.textInputError]
+                  : [styles.textInput, style?.textInput]
+              }
               autoCapitalize="none"
               onChangeText={passwordText => {
                 onChange(passwordText);
               }}
+              onFocus={() => setIsFocus(true)}
+              onBlur={() => setIsFocus(false)}
             />
           )}
         />
