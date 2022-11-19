@@ -8,8 +8,6 @@ module.exports = {
         alias: {
           app: './src',
           components: './src/components',
-          containers: './src/containers',
-          localization: './src/localization',
           utils: './src/utils',
         },
       },

@@ -1,5 +1,19 @@
-export {default as FBButton} from './FBButton';
-export {default as IView} from './IView';
-export {default as IButton} from './IButton';
-export {default as ITextInput} from './ITextInput';
-export {default as IText} from './IText';
+import FBButton from './FBButton';
+import IView from './IView';
+import IButton from './IButton';
+import ITextInput from './ITextInput';
+import IText from './IText';
+import IBaseScreen from './IBaseScreen';
+import IScrollView from './IScrollView';
+import IKeyboardAvoidingView from './IKeyboardAvoidingView';
+
+export default {
+  FBButton,
+  IView,
+  IButton,
+  ITextInput,
+  IText,
+  IBaseScreen,
+  IScrollView,
+  IKeyboardAvoidingView,
+};
