@@ -4,15 +4,15 @@ const deviceHeight = Dimensions.get('window').height;
 const devicewidth = Dimensions.get('window').width;
 
 export const common = {
-  THEMES_COLOR: selectedThemes(),
+  THEMES_COLOR: '#7BB3FE',
   THEMES_COLOR_2: '#EAEDED',
   ERROR_COLOR: '#F60108',
   SUCCESS_COLOR: '#0CA200',
   MODAL_WARN: '#FA7B29',
-  MODAL_INFO: selectedThemes(),
+  MODAL_INFO: '#7BB3FE',
   MODAL_ERROR: '#F60108',
-  MODAL_SUCCESS: selectedThemes(),
-  MODAL_DEFAULT: selectedThemes(),
+  MODAL_SUCCESS: '#7BB3FE',
+  MODAL_DEFAULT: '#7BB3FE',
   FONT_SIZE: 14,
   FONT_SIZE_2: 20,
   FONT_SIZE_3: 8,
@@ -24,6 +24,7 @@ export const common = {
   COLOR_3: '#eaeaea',
   COLOR_4: '#A7A7A7',
   COLOR_5: '#FBFAFA',
+  COLOR_6: '#D6D6D6',
   SCREEN_BACKGROUND_COLOR: '#eaeaea',
   DASHBOARD_R: '255',
   DASHBOARD_G: '255',
@@ -70,6 +71,12 @@ export const common = {
   CUSTOMER_INDIVIDUAL_ACCOUNT_RADIUS: 15,
 };
 
-function selectedThemes() {
-  return '#7BB3FE';
-}
+export const device = {
+  DEVICE_HEIGHT: deviceHeight,
+  DEVICE_WIDTH: devicewidth,
+};
+
+export const css = {
+  ALIGN_ITEMS_CENTER: 'center',
+  POSITION_ABSOLUTE: 'absolute',
+};

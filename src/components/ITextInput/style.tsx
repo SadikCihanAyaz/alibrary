@@ -1,4 +1,4 @@
-import {common} from '../../utils/Template';
+import {common} from 'utils/Template';
 
 export default {
   headerText: {

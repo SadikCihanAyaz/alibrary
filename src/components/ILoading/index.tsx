@@ -1,14 +1,23 @@
 import React from 'react';
-import {StyleProp, ViewProps, ViewStyle} from 'react-native';
+import {StyleProp, ActivityIndicatorProps, ViewStyle} from 'react-native';
 import IActivityIndicator from '../IActivityIndicator';
+import styleLocal from './style';
 
-interface Props extends ViewProps {
-  children?: any;
-  style?: StyleProp<ViewStyle> | undefined;
+interface Props extends ActivityIndicatorProps {
+  styleLoading?: StyleProp<ViewStyle> | undefined;
 }
 
 const ILoading = (props: Props): JSX.Element => {
-  return <IActivityIndicator {...props} />;
+  const {styleLoading} = props;
+  return (
+    <IActivityIndicator
+      color="#000000"
+      size="large"
+      animating={true}
+      styleActivityIndicator={[styleLocal.container, styleLoading]}
+      {...props}
+    />
+  );
 };
 
 export default ILoading;

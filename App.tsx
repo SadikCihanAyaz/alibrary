@@ -1,9 +1,9 @@
 import React from 'react';
-import {ScrollView} from 'react-native';
 import ITextInput from './src/components/ITextInput';
 import {useForm} from 'react-hook-form';
 import IButton from './src/components/IButton';
-import {IView, IText} from './src/components';
+import {IText} from './src/components';
+import CMP from './src/components';
 
 type FormValues = {
   firstName: string;
@@ -44,45 +44,56 @@ const App = () => {
   };
 
   return (
-    <IView>
-      <ScrollView>
-        <IView style={{marginTop: 50}} />
-        <IText style={{fontSize: 50}}>Deneme</IText>
-        <ITextInput
-          name={'firstName'}
-          headerText={'Password'}
-          textVal={val => {
-            console.log('value', val);
-          }}
-          errorMsg={errorMsg}
-          control={control}
-          error={errors.firstName as unknown as string}
-          errorText={errors?.firstName?.message as unknown as string}
-          placeHolder={'Test Place Holder'}
-          required={true}
-          secureText={false}
-        />
-        <ITextInput
-          name={'lastName'}
-          headerText={'Last Name'}
-          textVal={val => {
-            console.log('value', val);
-          }}
-          errorMsg={errorMsg2}
-          control={control}
-          error={errors.lastName as unknown as string}
-          errorText={errors?.lastName?.message as unknown as string}
-          placeHolder={'Test Place Holder'}
-          required={true}
-          secureText={false}
-        />
-        <IButton
-          onPress={handleSubmit(onSubmit)}
-          buttonTitle="Test Button Title"
-          testID="btnI"
-        />
-      </ScrollView>
-    </IView>
+    <CMP.IBaseScreen loading={false}>
+      <IText style={{fontSize: 50}}>Deneme</IText>
+      <IText style={{fontSize: 50}}>Deneme</IText>
+      <IText style={{fontSize: 50}}>Deneme</IText>
+      <IText style={{fontSize: 50}}>Deneme</IText>
+      <IText style={{fontSize: 50}}>Deneme</IText>
+      <IText style={{fontSize: 50}}>Deneme</IText>
+      <ITextInput
+        name={'firstName'}
+        headerText={'Password'}
+        textVal={val => {
+          console.log('value', val);
+        }}
+        errorMsg={errorMsg}
+        control={control}
+        error={errors.firstName as unknown as string}
+        errorText={errors?.firstName?.message as unknown as string}
+        placeHolder={'Test Place Holder'}
+        required={true}
+        secureText={false}
+      />
+      <ITextInput
+        name={'lastName'}
+        headerText={'Last Name'}
+        textVal={val => {
+          console.log('value', val);
+        }}
+        errorMsg={errorMsg2}
+        control={control}
+        error={errors.lastName as unknown as string}
+        errorText={errors?.lastName?.message as unknown as string}
+        placeHolder={'Test Place Holder'}
+        required={true}
+        secureText={false}
+      />
+      <IButton
+        onPress={handleSubmit(onSubmit)}
+        buttonTitle="Test Button Title"
+        testID="btnI"
+      />
+      <IText style={{fontSize: 50}}>Deneme</IText>
+      <IText style={{fontSize: 50}}>Deneme</IText>
+      <IText style={{fontSize: 50}}>Deneme</IText>
+      <IText style={{fontSize: 50}}>Deneme</IText>
+      <IText style={{fontSize: 50}}>Deneme</IText>
+      <IText style={{fontSize: 50}}>Deneme</IText>
+      <IText style={{fontSize: 50}}>Deneme</IText>
+      <IText style={{fontSize: 50}}>Deneme</IText>
+      <IText style={{fontSize: 50}}>Deneme</IText>
+    </CMP.IBaseScreen>
   );
 };
 

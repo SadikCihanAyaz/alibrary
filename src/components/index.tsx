@@ -6,6 +6,8 @@ import IText from './IText';
 import IBaseScreen from './IBaseScreen';
 import IScrollView from './IScrollView';
 import IKeyboardAvoidingView from './IKeyboardAvoidingView';
+import ILoading from './ILoading';
+import ISafeAreaView from './ISafeAreaView';
 
 export default {
   FBButton,
@@ -16,4 +18,17 @@ export default {
   IBaseScreen,
   IScrollView,
   IKeyboardAvoidingView,
+  ILoading,
+  ISafeAreaView,
 };
+
+export {default as FBButton} from './FBButton';
+export {default as IView} from './IView';
+export {default as IButton} from './IButton';
+export {default as ITextInput} from './ITextInput';
+export {default as IText} from './IText';
+export {default as ITeIBaseScreenxt} from './IBaseScreen';
+export {default as IScrollView} from './IScrollView';
+export {default as IKeyboardAvoidingView} from './IKeyboardAvoidingView';
+export {default as ILoading} from './ILoading';
+export {default as ISafeAreaView} from './ISafeAreaView';

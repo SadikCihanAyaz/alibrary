@@ -1,12 +1,12 @@
 import React from 'react';
-import {StyleProp, Text, TextStyle} from 'react-native';
+import {StyleProp, Text, TextProps, TextStyle} from 'react-native';
 
-interface Props {
+interface Props extends TextProps {
   children?: any;
   style?: StyleProp<TextStyle> | undefined;
 }
 
-const IText: React.FC<Props> = props => {
+const IText = (props: Props): JSX.Element => {
   const {children} = props;
   return <Text {...props}>{children}</Text>;
 };
