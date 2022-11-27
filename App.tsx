@@ -4,6 +4,7 @@ import {useForm} from 'react-hook-form';
 import IButton from './src/components/IButton';
 import {IText} from './src/components';
 import CMP from './src/components';
+import CMPDEMO from './src/demo';
 
 type FormValues = {
   firstName: string;
@@ -43,8 +44,12 @@ const App = () => {
     }
   };
 
+  const modalDemo1 = () => {
+    return <CMPDEMO.IModalDemo1 />;
+  };
+
   return (
-    <CMP.IBaseScreen loading={false}>
+    <CMP.IBaseScreen loading={true} modal={modalDemo1()}>
       <IText style={{fontSize: 50}}>Deneme</IText>
       <IText style={{fontSize: 50}}>Deneme</IText>
       <IText style={{fontSize: 50}}>Deneme</IText>

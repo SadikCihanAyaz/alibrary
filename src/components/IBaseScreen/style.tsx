@@ -6,7 +6,8 @@ export default StyleSheet.create({
     flex: 1,
   },
   containerGrayColor: {
-    backgroundColor: common.COLOR_6,
+    backgroundColor: common.COLOR_4,
+    opacity: 0.8,
   },
   containerDefaultColor: {
     backgroundColor: common.SCREEN_BACKGROUND_COLOR,

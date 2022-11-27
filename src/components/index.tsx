@@ -8,6 +8,7 @@ import IScrollView from './IScrollView';
 import IKeyboardAvoidingView from './IKeyboardAvoidingView';
 import ILoading from './ILoading';
 import ISafeAreaView from './ISafeAreaView';
+import IModal from './IModal';
 
 export default {
   FBButton,
@@ -20,6 +21,7 @@ export default {
   IKeyboardAvoidingView,
   ILoading,
   ISafeAreaView,
+  IModal,
 };
 
 export {default as FBButton} from './FBButton';
@@ -32,3 +34,4 @@ export {default as IScrollView} from './IScrollView';
 export {default as IKeyboardAvoidingView} from './IKeyboardAvoidingView';
 export {default as ILoading} from './ILoading';
 export {default as ISafeAreaView} from './ISafeAreaView';
+export {default as IModal} from './IModal';

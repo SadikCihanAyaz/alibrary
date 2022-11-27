@@ -8,10 +8,11 @@ interface Props {
   styleBaseScreen?: StyleProp<ViewStyle> | undefined;
   styleLoading?: StyleProp<ViewStyle> | undefined;
   loading?: boolean;
+  modal?: React.ReactNode;
 }
 
 const IBaseScreen: React.FC<Props> = props => {
-  const {children, styleBaseScreen, styleLoading, loading} = props;
+  const {children, styleBaseScreen, styleLoading, loading, modal} = props;
 
   return (
     <CMP.IView
@@ -23,6 +24,8 @@ const IBaseScreen: React.FC<Props> = props => {
         styleBaseScreen,
       ]}>
       {loading ? <CMP.ILoading styleLoading={[styleLoading]} /> : null}
+      {modal ?? null}
+
       <CMP.ISafeAreaView>
         <CMP.IScrollView keyboardShouldPersistTaps="handled">
           <CMP.IKeyboardAvoidingView enabled>
