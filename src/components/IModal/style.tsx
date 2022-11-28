@@ -1,42 +1,24 @@
-import {common} from 'utils/Template';
+import {StyleSheet} from 'react-native';
+import {common, device} from 'utils/Template';
 
-export default {
-  headerText: {
-    fontSize: common.FONT_SIZE,
-    paddingLeft: common.COMPONENT_PADDING_LEFT,
-    fontWeight: common.FONT_WEIGHT_BOLD,
+/**
+ * Adding those values that marginTop and height
+ * must be equal value of device.DEVICE_HEIGHT
+ */
+export default StyleSheet.create({
+  modalView: {
+    backgroundColor: common.COLOR_2,
+    borderRadius: common.MODAL_RADIUS,
+    width: device.DEVICE_WIDTH,
+    marginTop: device.DEVICE_HEIGHT / common.MODAL_CROSS_VALUE,
+    height:
+      device.DEVICE_HEIGHT - device.DEVICE_HEIGHT / common.MODAL_CROSS_VALUE,
+    padding: 35,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 5,
   },
-  headerTextError: {
-    fontSize: common.FONT_SIZE,
-    paddingLeft: common.COMPONENT_PADDING_LEFT,
-    fontWeight: common.FONT_WEIGHT_BOLD,
-    color: common.ERROR_COLOR,
-  },
-  textInput: {
-    height: common.COMPONENT_LINE_HEIGHT,
-    fontSize: common.FONT_SIZE,
-    borderRadius: common.COMPONENT_BORDER_RADIUS,
-    borderBottomWidth: common.COMPONENT_BORDER_WITH,
-    borderColor: common.COLOR_3,
-    paddingLeft: common.COMPONENT_PADDING_LEFT,
-    marginBottom: common.COMPONENT_MARGIN_BOTTOM,
-  },
-  textInputError: {
-    height: common.COMPONENT_LINE_HEIGHT,
-    fontSize: common.FONT_SIZE,
-    borderRadius: common.COMPONENT_BORDER_RADIUS,
-    borderBottomWidth: common.COMPONENT_BORDER_WITH_2,
-    borderColor: common.ERROR_COLOR,
-    paddingLeft: common.COMPONENT_PADDING_LEFT,
-    marginBottom: common.COMPONENT_MARGIN_BOTTOM,
-  },
-  textInputFocus: {
-    height: common.COMPONENT_LINE_HEIGHT_2,
-    fontSize: common.FONT_SIZE,
-    borderRadius: common.COMPONENT_BORDER_RADIUS,
-    borderBottomWidth: common.COMPONENT_BORDER_WITH_2,
-    borderColor: common.THEMES_COLOR,
-    paddingLeft: common.COMPONENT_PADDING_LEFT,
-    marginBottom: common.COMPONENT_MARGIN_BOTTOM,
-  },
-};
+});

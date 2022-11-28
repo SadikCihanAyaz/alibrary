@@ -4,11 +4,16 @@ import {StyleProp, View, ViewStyle} from 'react-native';
 interface Props {
   children?: any;
   style?: StyleProp<ViewStyle> | undefined;
+  testID?: string | undefined;
 }
 
 const IView: React.FC<Props> = props => {
-  const {children} = props;
-  return <View {...props}>{children}</View>;
+  const {children, testID, style} = props;
+  return (
+    <View testID={testID} style={style} {...props}>
+      {children}
+    </View>
+  );
 };
 
 export default IView;

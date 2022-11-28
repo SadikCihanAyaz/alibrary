@@ -19,12 +19,28 @@ const IBaseScreen: React.FC<Props> = props => {
       style={[
         styleLocal.container,
         loading
-          ? styleLocal.containerGrayColor
+          ? [styleLocal.containerGrayColor, styleLocal.loadingOpacity]
           : styleLocal.containerDefaultColor,
         styleBaseScreen,
       ]}>
       {loading ? <CMP.ILoading styleLoading={[styleLoading]} /> : null}
-      {modal ?? null}
+      {modal ? (
+        <CMP.IModal
+          animationType="slide"
+          transparent={true}
+          visible={true}
+          style={
+            loading
+              ? [styleLocal.containerGrayColor, styleLocal.loadingOpacityModal]
+              : []
+          }
+          onRequestClose={() => {
+            //Alert.alert('Modal has been closed.');
+            //setModalVisible(true);
+          }}>
+          {modal}
+        </CMP.IModal>
+      ) : null}
 
       <CMP.ISafeAreaView>
         <CMP.IScrollView keyboardShouldPersistTaps="handled">

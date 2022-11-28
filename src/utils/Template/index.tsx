@@ -69,6 +69,10 @@ export const common = {
   DEVICE_HEIGHT: deviceHeight,
   DEVICE_WIDTH: devicewidth,
   CUSTOMER_INDIVIDUAL_ACCOUNT_RADIUS: 15,
+  LOADING_OPACITY: 0.8,
+  LOADING_OPACITY_MODAL: 0.9,
+  MODAL_RADIUS: 20,
+  MODAL_CROSS_VALUE: 3,
 };
 
 export const device = {

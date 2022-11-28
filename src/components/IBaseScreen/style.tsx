@@ -7,7 +7,12 @@ export default StyleSheet.create({
   },
   containerGrayColor: {
     backgroundColor: common.COLOR_4,
-    opacity: 0.8,
+  },
+  loadingOpacity: {
+    opacity: common.LOADING_OPACITY,
+  },
+  loadingOpacityModal: {
+    opacity: common.LOADING_OPACITY_MODAL,
   },
   containerDefaultColor: {
     backgroundColor: common.SCREEN_BACKGROUND_COLOR,
