@@ -50,12 +50,6 @@ const App = () => {
 
   return (
     <CMP.IBaseScreen loading={true} modal={modalDemo1()}>
-      <IText style={{fontSize: 50}}>Deneme</IText>
-      <IText style={{fontSize: 50}}>Deneme</IText>
-      <IText style={{fontSize: 50}}>Deneme</IText>
-      <IText style={{fontSize: 50}}>Deneme</IText>
-      <IText style={{fontSize: 50}}>Deneme</IText>
-      <IText style={{fontSize: 50}}>Deneme</IText>
       <ITextInput
         name={'firstName'}
         headerText={'Password'}
