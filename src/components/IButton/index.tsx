@@ -20,7 +20,7 @@ interface Props {
 
 const IButton: React.FC<Props> = props => {
   const {onPress, buttonTitle, testID, buttonStyle, buttonTextStyle} = props;
-  const [onPressed, setOnPressed] = useState(true);
+  const [onPressed, setOnPressed] = useState(false);
 
   const onPressedInFunc = () => {
     setOnPressed(true);
@@ -39,8 +39,9 @@ const IButton: React.FC<Props> = props => {
         onPressed ? styleLocal.buttonPressedStyle : null,
         buttonStyle,
       ]}
+      onPress={onPressedInFunc}
       onPressOut={onPressedOutFunc}
-      onPressIn={onPress && onPressedInFunc}>
+      onPressIn={onPress}>
       <CMP.IText style={[styleLocal.buttonTextStyle, buttonTextStyle]}>
         {buttonTitle}
       </CMP.IText>

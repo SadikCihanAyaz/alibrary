@@ -24,7 +24,12 @@ const App = () => {
 
   const errorMsg = (value: any) => {
     console.log('data' + value);
-    if (value?.length < 1) {
+
+    if (value?.length === undefined) {
+      return 'cannot be empty';
+    }
+
+    if (value?.length < 3 && value?.length > 0) {
       return 'message 5';
     } else if (value?.length < 6) {
       return 'message 6';
@@ -35,7 +40,12 @@ const App = () => {
 
   const errorMsg2 = (value: any) => {
     console.log('data' + value);
-    if (value?.length < 1) {
+
+    if (value?.length === undefined) {
+      return 'cannot be empty';
+    }
+
+    if (value?.length < 3 && value?.length > 0) {
       return 'message 5';
     } else if (value?.length < 6) {
       return 'message 6';

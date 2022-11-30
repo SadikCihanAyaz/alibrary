@@ -17,7 +17,7 @@ export default {
     fontSize: common.FONT_SIZE,
     borderRadius: common.COMPONENT_BORDER_RADIUS,
     borderBottomWidth: common.COMPONENT_BORDER_WITH,
-    borderColor: common.COLOR_3,
+    borderColor: common.THEMES_COLOR,
     paddingLeft: common.COMPONENT_PADDING_LEFT,
     marginBottom: common.COMPONENT_MARGIN_BOTTOM,
   },
