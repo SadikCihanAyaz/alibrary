@@ -1,26 +1,50 @@
-import React from 'react';
-import {View, Text, Pressable} from 'react-native';
-import style from './style';
+import React, {useState} from 'react';
+import {
+  GestureResponderEvent,
+  Pressable,
+  StyleProp,
+  TextStyle,
+  ViewStyle,
+} from 'react-native';
+import styleLocal from './style';
 import * as Common from '../../utils/Style';
+import CMP from '../../components';
 
 interface Props {
-  onPress(): void;
+  onPress?: null | ((event: GestureResponderEvent) => void) | undefined;
   buttonTitle: string;
   testID: string;
+  buttonStyle?: StyleProp<ViewStyle> | undefined;
+  buttonTextStyle?: StyleProp<TextStyle> | undefined;
 }
 
 const IButton: React.FC<Props> = props => {
-  const {onPress, buttonTitle, testID} = props;
+  const {onPress, buttonTitle, testID, buttonStyle, buttonTextStyle} = props;
+  const [onPressed, setOnPressed] = useState(true);
+
+  const onPressedInFunc = () => {
+    setOnPressed(true);
+  };
+
+  const onPressedOutFunc = () => {
+    setOnPressed(false);
+  };
 
   return (
-    <View>
-      <Pressable
-        testID={testID}
-        style={[style.buttonStyle, Common.contentCenter()]}
-        onPressIn={onPress}>
-        <Text>{buttonTitle}</Text>
-      </Pressable>
-    </View>
+    <Pressable
+      testID={testID}
+      style={[
+        styleLocal.buttonStyle,
+        Common.contentCenter(),
+        onPressed ? styleLocal.buttonPressedStyle : null,
+        buttonStyle,
+      ]}
+      onPressOut={onPressedOutFunc}
+      onPressIn={onPress && onPressedInFunc}>
+      <CMP.IText style={[styleLocal.buttonTextStyle, buttonTextStyle]}>
+        {buttonTitle}
+      </CMP.IText>
+    </Pressable>
   );
 };
 
