@@ -49,7 +49,7 @@ const App = () => {
   };
 
   return (
-    <CMP.IBaseScreen loading={true} modal={modalDemo1()}>
+    <CMP.IBaseScreen loading={false} modal={false ? modalDemo1() : null}>
       <ITextInput
         name={'firstName'}
         headerText={'Password'}

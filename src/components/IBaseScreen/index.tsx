@@ -9,10 +9,12 @@ interface Props {
   styleLoading?: StyleProp<ViewStyle> | undefined;
   loading?: boolean;
   modal?: React.ReactNode;
+  modalStyle?: StyleProp<ViewStyle> | undefined;
 }
 
 const IBaseScreen: React.FC<Props> = props => {
-  const {children, styleBaseScreen, styleLoading, loading, modal} = props;
+  const {children, styleBaseScreen, styleLoading, loading, modal, modalStyle} =
+    props;
 
   return (
     <CMP.IView
@@ -30,11 +32,7 @@ const IBaseScreen: React.FC<Props> = props => {
           animationType="slide"
           transparent={true}
           visible={true}
-          style={[styleLocal.modalView]}
-          onRequestClose={() => {
-            //Alert.alert('Modal has been closed.');
-            //setModalVisible(true);
-          }}>
+          style={[styleLocal.modalView, modalStyle]}>
           {loading ? (
             <CMP.ILoading styleLoading={[styleLocal.modalLoading]} />
           ) : null}
