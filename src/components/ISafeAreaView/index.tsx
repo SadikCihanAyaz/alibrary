@@ -2,7 +2,7 @@ import React from 'react';
 import {SafeAreaView, StyleProp, ViewStyle} from 'react-native';
 
 interface Props {
-  children?: any;
+  children?: React.ReactNode;
   styleSafeAreaView?: StyleProp<ViewStyle> | undefined;
 }
 

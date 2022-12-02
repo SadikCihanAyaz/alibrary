@@ -1,8 +1,5 @@
 import React from 'react';
-import ITextInput from './src/components/ITextInput';
 import {useForm} from 'react-hook-form';
-import IButton from './src/components/IButton';
-import {IText} from './src/components';
 import CMP from './src/components';
 import CMPDEMO from './src/demo';
 
@@ -60,7 +57,7 @@ const App = () => {
 
   return (
     <CMP.IBaseScreen loading={false} modal={false ? modalDemo1() : null}>
-      <ITextInput
+      <CMP.ITextInput
         name={'firstName'}
         headerText={'Password'}
         textVal={val => {
@@ -74,7 +71,7 @@ const App = () => {
         required={true}
         secureText={false}
       />
-      <ITextInput
+      <CMP.ITextInput
         name={'lastName'}
         headerText={'Last Name'}
         textVal={val => {
@@ -88,20 +85,37 @@ const App = () => {
         required={true}
         secureText={false}
       />
-      <IButton
+      <CMP.IButton
         onPress={handleSubmit(onSubmit)}
         buttonTitle="Test Button Title"
         testID="btnI"
       />
-      <IText style={{fontSize: 50}}>Deneme</IText>
-      <IText style={{fontSize: 50}}>Deneme</IText>
-      <IText style={{fontSize: 50}}>Deneme</IText>
-      <IText style={{fontSize: 50}}>Deneme</IText>
-      <IText style={{fontSize: 50}}>Deneme</IText>
-      <IText style={{fontSize: 50}}>Deneme</IText>
-      <IText style={{fontSize: 50}}>Deneme</IText>
-      <IText style={{fontSize: 50}}>Deneme</IText>
-      <IText style={{fontSize: 50}}>Deneme</IText>
+
+      <CMP.IText style={{fontSize: 50}}>Deneme</CMP.IText>
+      <CMP.ICarousel style={{}}>
+        <CMP.IButton
+          onPress={handleSubmit(onSubmit)}
+          buttonTitle="Test Button Title"
+          testID="btnI"
+        />
+        <CMP.IButton
+          onPress={handleSubmit(onSubmit)}
+          buttonTitle="Test Button Title"
+          buttonStyle={{backgroundColor: '#fff'}}
+          buttonTextStyle={{color: '#7BB3FE'}}
+          testID="btnI"
+        />
+        <CMP.IButton
+          onPress={handleSubmit(onSubmit)}
+          buttonTitle="Test Button Title"
+          testID="btnI"
+        />
+        <CMP.IButton
+          onPress={handleSubmit(onSubmit)}
+          buttonTitle="Test Button Title"
+          testID="btnI"
+        />
+      </CMP.ICarousel>
     </CMP.IBaseScreen>
   );
 };

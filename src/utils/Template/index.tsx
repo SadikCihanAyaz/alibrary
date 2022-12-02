@@ -26,7 +26,7 @@ export const common = {
   COLOR_4: '#A7A7A7',
   COLOR_5: '#FBFAFA',
   COLOR_6: '#D6D6D6',
-  SCREEN_BACKGROUND_COLOR: '#eaeaea',
+  SCREEN_BACKGROUND_COLOR: '#ffffff',
   DASHBOARD_R: '255',
   DASHBOARD_G: '255',
   DASHBOARD_B: '255',

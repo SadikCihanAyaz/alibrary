@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleProp, View, ViewStyle} from 'react-native';
 
 interface Props {
-  children?: any;
+  children?: React.ReactNode;
   style?: StyleProp<ViewStyle> | undefined;
   testID?: string | undefined;
 }

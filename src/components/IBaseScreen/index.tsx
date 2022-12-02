@@ -4,7 +4,7 @@ import styleLocal from './style';
 import CMP from '../../components';
 
 interface Props {
-  children?: any;
+  children?: React.ReactNode;
   styleBaseScreen?: StyleProp<ViewStyle> | undefined;
   styleLoading?: StyleProp<ViewStyle> | undefined;
   loading?: boolean;

@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 
 interface Props extends KeyboardAvoidingViewProps {
-  children?: any;
+  children?: React.ReactNode;
   style?: StyleProp<ViewStyle> | undefined;
 }
 

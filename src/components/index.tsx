@@ -9,6 +9,9 @@ import IKeyboardAvoidingView from './IKeyboardAvoidingView';
 import ILoading from './ILoading';
 import ISafeAreaView from './ISafeAreaView';
 import IModal from './IModal';
+import IActivityIndicator from './IActivityIndicator';
+import IHeader from './IHeader';
+import ICarousel from './ICarousel';
 
 export default {
   FBButton,
@@ -22,6 +25,9 @@ export default {
   ILoading,
   ISafeAreaView,
   IModal,
+  IActivityIndicator,
+  IHeader,
+  ICarousel,
 };
 
 export {default as FBButton} from './FBButton';
@@ -35,3 +41,6 @@ export {default as IKeyboardAvoidingView} from './IKeyboardAvoidingView';
 export {default as ILoading} from './ILoading';
 export {default as ISafeAreaView} from './ISafeAreaView';
 export {default as IModal} from './IModal';
+export {default as IActivityIndicator} from './IActivityIndicator';
+export {default as IHeader} from './IHeader';
+export {default as ICarousel} from './ICarousel';

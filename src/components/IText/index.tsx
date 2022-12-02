@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleProp, Text, TextProps, TextStyle} from 'react-native';
 
 interface Props extends TextProps {
-  children?: any;
+  children?: React.ReactNode;
   style?: StyleProp<TextStyle> | undefined;
 }
 
