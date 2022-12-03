@@ -1,62 +1,40 @@
 import React, {useState} from 'react';
-import {TextInput, View, Text, ImageSourcePropType} from 'react-native';
+import {
+  TextInput,
+  View,
+  Text,
+  ImageSourcePropType,
+  TextInputProps,
+  NativeSyntheticEvent,
+  TextInputFocusEventData,
+  StyleProp,
+  ViewStyle,
+} from 'react-native';
 import styles from './style';
 import {Controller} from 'react-hook-form';
 import CMP from '../../components';
 
-/*
-  const errorMsg = (value: any) => {
-    console.log('data' + value);
-    if (value.length < 1) {
-      return 'message 5';
-    } else if (value.length < 6) {
-      return 'message 6';
-    } else {
-      return true;
-    }
-  };
-
-  return (
-    <View>
-      <ITextInput
-        name={'firstName'}
-        headerText={'Password'}
-        textVal={val => {
-          console.log('value', val);
-        }}
-        errorMsg={errorMsg}
-        control={control}
-        error={errors.firstName as unknown as string}
-        errorText={errors?.firstName?.message as unknown as string}
-        placeHolder={'Test Place Holder'}
-        required={true}
-        secureText={false}
-      />
-    </View>
-  );
-  */
-
-interface Props {
+interface Props extends TextInputProps {
   name: string;
   headerText?: string;
+  testID: string;
   control: any;
-  placeHolder?: string;
-  secureText?: boolean;
   required?: boolean;
   error: string;
   errorText: string;
   errorMsg: any;
   textVal: (text: string) => void;
-  onFocus?: (type: boolean) => void | undefined;
-  style?: any;
+  onFocus?:
+    | ((e: NativeSyntheticEvent<TextInputFocusEventData>) => void)
+    | undefined;
+  style?: StyleProp<ViewStyle> | any | undefined;
   icon?: ImageSourcePropType;
 }
 const ITextInput: React.FC<Props> = props => {
   const {
+    testID,
     name,
     control,
-    placeHolder,
-    secureText = false,
     required = false,
     headerText,
     style,
@@ -71,12 +49,16 @@ const ITextInput: React.FC<Props> = props => {
         : props.errorText
         ? [styles.textInputError, style?.textInputError]
         : [styles.textInput, style?.textInput],
-      styles.textInputPadding,
     ];
 
     const iconStyle = icon ? [styles.textInputImage] : null;
 
-    return [focusStyle, iconStyle];
+    const otherTextInputStyle = [
+      styles.textInputPadding,
+      style?.otherTextInput,
+    ];
+
+    return [focusStyle, iconStyle, otherTextInputStyle];
   };
 
   return (
@@ -103,18 +85,23 @@ const ITextInput: React.FC<Props> = props => {
             validate: value => props.errorMsg(value),
           }}
           render={({field: {onChange}}) => (
-            <CMP.IView style={styles.imageTextInputViewStyle}>
+            <CMP.IView
+              testID={testID + '_imageTextInputView'}
+              style={[
+                styles.imageTextInputViewStyle,
+                style?.imageTextInputView,
+              ]}>
               {icon ? (
                 <CMP.IImage
+                  testID={testID + '_image'}
                   source={icon}
-                  style={[styles.iconStyle, styles.iconSize]}
-                  testID={'testImg'}
+                  style={[styles.iconStyle, styles.iconSize, style?.icon]}
                 />
               ) : null}
 
               <TextInput
-                secureTextEntry={secureText}
-                placeholder={placeHolder}
+                {...props}
+                testID={testID + '_textInput'}
                 style={textInputStyle()}
                 autoCapitalize="none"
                 onChangeText={passwordText => {

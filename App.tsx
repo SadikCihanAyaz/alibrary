@@ -58,6 +58,7 @@ const App = () => {
   return (
     <CMP.IBaseScreen loading={false} modal={false ? modalDemo1() : null}>
       <CMP.ITextInput
+        testID="textInput1"
         name={'firstName'}
         headerText={'Password'}
         textVal={val => {
@@ -67,11 +68,11 @@ const App = () => {
         control={control}
         error={errors.firstName as unknown as string}
         errorText={errors?.firstName?.message as unknown as string}
-        placeHolder={'Test Place Holder'}
+        placeholder={'Test Place Holder'}
         required={true}
-        secureText={false}
       />
       <CMP.ITextInput
+        testID="textInput2"
         name={'lastName'}
         headerText={'Last Name'}
         textVal={val => {
@@ -81,9 +82,9 @@ const App = () => {
         control={control}
         error={errors.lastName as unknown as string}
         errorText={errors?.lastName?.message as unknown as string}
-        placeHolder={'Test Place Holder'}
+        placeholder={'Test Place Holder'}
         required={true}
-        secureText={true}
+        secureTextEntry={true}
         icon={{uri: 'https://reactjs.org/logo-og.png'}}
       />
       <CMP.IButton
