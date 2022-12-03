@@ -12,6 +12,7 @@ import IModal from './IModal';
 import IActivityIndicator from './IActivityIndicator';
 import IHeader from './IHeader';
 import ICarousel from './ICarousel';
+import IImage from './IImage';
 
 export default {
   FBButton,
@@ -28,6 +29,7 @@ export default {
   IActivityIndicator,
   IHeader,
   ICarousel,
+  IImage,
 };
 
 export {default as FBButton} from './FBButton';
@@ -44,3 +46,4 @@ export {default as IModal} from './IModal';
 export {default as IActivityIndicator} from './IActivityIndicator';
 export {default as IHeader} from './IHeader';
 export {default as ICarousel} from './ICarousel';
+export {default as IImage} from './IImage';

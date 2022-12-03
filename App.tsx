@@ -83,7 +83,8 @@ const App = () => {
         errorText={errors?.lastName?.message as unknown as string}
         placeHolder={'Test Place Holder'}
         required={true}
-        secureText={false}
+        secureText={true}
+        icon={{uri: 'https://reactjs.org/logo-og.png'}}
       />
       <CMP.IButton
         onPress={handleSubmit(onSubmit)}
@@ -92,6 +93,11 @@ const App = () => {
       />
 
       <CMP.IText style={{fontSize: 50}}>Deneme</CMP.IText>
+      <CMP.IImage
+        source={{uri: 'https://reactjs.org/logo-og.png'}}
+        style={{width: 40, height: 40}}
+        testID={'testImg'}
+      />
       <CMP.ICarousel style={{}}>
         <CMP.IButton
           onPress={handleSubmit(onSubmit)}

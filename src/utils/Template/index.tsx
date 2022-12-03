@@ -74,6 +74,7 @@ export const common = {
   LOADING_OPACITY_MODAL: 0.9,
   MODAL_RADIUS: 20,
   MODAL_CROSS_VALUE: 3,
+  TEXT_INPUT_IMAGE_PADDING: 10,
 };
 
 export const device = {

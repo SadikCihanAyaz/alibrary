@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-import {TextInput, View, Text} from 'react-native';
+import {TextInput, View, Text, ImageSourcePropType} from 'react-native';
 import styles from './style';
 import {Controller} from 'react-hook-form';
+import CMP from '../../components';
 
 /*
   const errorMsg = (value: any) => {
@@ -48,6 +49,7 @@ interface Props {
   textVal: (text: string) => void;
   onFocus?: (type: boolean) => void | undefined;
   style?: any;
+  icon?: ImageSourcePropType;
 }
 const ITextInput: React.FC<Props> = props => {
   const {
@@ -58,8 +60,24 @@ const ITextInput: React.FC<Props> = props => {
     required = false,
     headerText,
     style,
+    icon,
   } = props;
   const [isFocus, setIsFocus] = useState(false);
+
+  const textInputStyle = () => {
+    const focusStyle = [
+      isFocus
+        ? [styles.textInputFocus, style?.textInputFocus]
+        : props.errorText
+        ? [styles.textInputError, style?.textInputError]
+        : [styles.textInput, style?.textInput],
+      styles.textInputPadding,
+    ];
+
+    const iconStyle = icon ? [styles.textInputImage] : null;
+
+    return [focusStyle, iconStyle];
+  };
 
   return (
     <View style={[style?.container]}>
@@ -85,23 +103,27 @@ const ITextInput: React.FC<Props> = props => {
             validate: value => props.errorMsg(value),
           }}
           render={({field: {onChange}}) => (
-            <TextInput
-              secureTextEntry={secureText}
-              placeholder={placeHolder}
-              style={
-                isFocus
-                  ? [styles.textInputFocus, style?.textInputFocus]
-                  : props.errorText
-                  ? [styles.textInputError, style?.textInputError]
-                  : [styles.textInput, style?.textInput]
-              }
-              autoCapitalize="none"
-              onChangeText={passwordText => {
-                onChange(passwordText);
-              }}
-              onFocus={() => setIsFocus(true)}
-              onBlur={() => setIsFocus(false)}
-            />
+            <CMP.IView style={styles.imageTextInputViewStyle}>
+              {icon ? (
+                <CMP.IImage
+                  source={icon}
+                  style={[styles.iconStyle, styles.iconSize]}
+                  testID={'testImg'}
+                />
+              ) : null}
+
+              <TextInput
+                secureTextEntry={secureText}
+                placeholder={placeHolder}
+                style={textInputStyle()}
+                autoCapitalize="none"
+                onChangeText={passwordText => {
+                  onChange(passwordText);
+                }}
+                onFocus={() => setIsFocus(true)}
+                onBlur={() => setIsFocus(false)}
+              />
+            </CMP.IView>
           )}
         />
       </View>
