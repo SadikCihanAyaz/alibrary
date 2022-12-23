@@ -15,6 +15,7 @@ import ICarousel from './ICarousel';
 import IImage from './IImage';
 import IFlatList from './IFlatList';
 import ILabelTicket from './ILabelTicket';
+import IPressable from './IPressable';
 
 export default {
   FBButton,
@@ -34,6 +35,7 @@ export default {
   IImage,
   IFlatList,
   ILabelTicket,
+  IPressable,
 };
 
 export {default as FBButton} from './FBButton';
@@ -53,3 +55,4 @@ export {default as ICarousel} from './ICarousel';
 export {default as IImage} from './IImage';
 export {default as IFlatList} from './IFlatList';
 export {default as ILabelTicket} from './ILabelTicket';
+export {default as IPressable} from './IPressable';

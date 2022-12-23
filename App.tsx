@@ -1,6 +1,8 @@
 import React from 'react';
 import {useForm} from 'react-hook-form';
+import {GestureResponderEvent} from 'react-native';
 import CMP from './src/components';
+import IMG from './src/image';
 import CMPDEMO from './src/demo';
 
 type FormValues = {
@@ -55,6 +57,11 @@ const App = () => {
     return <CMPDEMO.IModalDemo1 />;
   };
 
+  const pressableTest = (event: GestureResponderEvent) => {
+    console.log('pressableTest' + event);
+    console.log(event);
+  };
+
   return (
     <CMP.IBaseScreen loading={false} modal={false ? modalDemo1() : null}>
       <CMP.ITextInput
@@ -93,7 +100,16 @@ const App = () => {
         testID="btnI"
         buttonStyle={{height: 45}}
       />
-      <CMP.ILabelTicket testID="tes" />
+      <CMP.ILabelTicket
+        testID="tes"
+        text="Label Ticket"
+        rightRound
+        leftRound
+        onPress={() => {
+          console.log('onPress Label');
+        }}
+        imgUri={IMG.Cancel}
+      />
 
       <CMP.IText style={{fontSize: 50}}>Deneme</CMP.IText>
       <CMP.IImage
@@ -142,6 +158,15 @@ const App = () => {
           testID="btnI"
         />
       </CMP.ICarousel>
+      <CMP.IPressable onPressIn={handleSubmit(onSubmit)} testID="testPressable">
+        <CMP.IText>{'handleSubmit'}</CMP.IText>
+      </CMP.IPressable>
+      <CMP.IPressable
+        style={{backgroundColor: 'red', alignSelf: 'baseline'}}
+        onPressIn={pressableTest}
+        testID="testPressable">
+        <CMP.IText>{'own methods'}</CMP.IText>
+      </CMP.IPressable>
     </CMP.IBaseScreen>
   );
 };
