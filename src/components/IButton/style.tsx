@@ -9,7 +9,7 @@ export default {
   buttonPressedStyle: {
     backgroundColor: common.BUTTON_PRESSED_COLOR,
     borderRadius: common.COMPONENT_BORDER_RADIUS,
-    height: common.COMPONENT_LINE_HEIGHT,
+    //height: common.COMPONENT_LINE_HEIGHT,
     shadowOffset: {
       width: 0,
       height: 2,

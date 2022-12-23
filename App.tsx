@@ -91,7 +91,9 @@ const App = () => {
         onPress={handleSubmit(onSubmit)}
         buttonTitle="Test Button Title"
         testID="btnI"
+        buttonStyle={{height: 45}}
       />
+      <CMP.ILabelTicket testID="tes" />
 
       <CMP.IText style={{fontSize: 50}}>Deneme</CMP.IText>
       <CMP.IImage
@@ -124,13 +126,14 @@ const App = () => {
         <CMP.IButton
           onPress={handleSubmit(onSubmit)}
           buttonTitle="Test Button Title"
-          buttonStyle={{backgroundColor: '#fff'}}
-          buttonTextStyle={{color: '#7BB3FE', height: 20}}
+          buttonStyle={{height: 45, backgroundColor: '#fff'}}
+          buttonTextStyle={{color: '#7BB3FE'}}
           testID="btnI"
         />
         <CMP.IButton
           onPress={handleSubmit(onSubmit)}
           buttonTitle="Test Button Title"
+          buttonStyle={{height: 45}}
           testID="btnI"
         />
         <CMP.IButton
