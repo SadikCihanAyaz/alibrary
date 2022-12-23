@@ -99,7 +99,23 @@ const App = () => {
         style={{width: 40, height: 40}}
         testID={'testImg'}
       />
-      <CMP.ICarousel style={{}}>
+      <CMP.IFlatList
+        testID={'flat'}
+        numColumns={2}
+        data={['Deneme Test', '2', '3', '4']}
+        renderItem={({item, index}) => {
+          return (
+            <CMP.IButton
+              buttonStyle={{width: '30%'}}
+              testID={'test' + index}
+              buttonTitle={String(item)}
+              onPress={handleSubmit(onSubmit)}
+            />
+          );
+        }}
+      />
+
+      <CMP.ICarousel style={{backgroundColor: '#fff'}}>
         <CMP.IButton
           onPress={handleSubmit(onSubmit)}
           buttonTitle="Test Button Title"
@@ -109,7 +125,7 @@ const App = () => {
           onPress={handleSubmit(onSubmit)}
           buttonTitle="Test Button Title"
           buttonStyle={{backgroundColor: '#fff'}}
-          buttonTextStyle={{color: '#7BB3FE'}}
+          buttonTextStyle={{color: '#7BB3FE', height: 20}}
           testID="btnI"
         />
         <CMP.IButton

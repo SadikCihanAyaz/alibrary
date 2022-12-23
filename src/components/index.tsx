@@ -13,6 +13,7 @@ import IActivityIndicator from './IActivityIndicator';
 import IHeader from './IHeader';
 import ICarousel from './ICarousel';
 import IImage from './IImage';
+import IFlatList from './IFlatList';
 
 export default {
   FBButton,
@@ -30,6 +31,7 @@ export default {
   IHeader,
   ICarousel,
   IImage,
+  IFlatList,
 };
 
 export {default as FBButton} from './FBButton';
@@ -47,3 +49,4 @@ export {default as IActivityIndicator} from './IActivityIndicator';
 export {default as IHeader} from './IHeader';
 export {default as ICarousel} from './ICarousel';
 export {default as IImage} from './IImage';
+export {default as IFlatList} from './IFlatList';
