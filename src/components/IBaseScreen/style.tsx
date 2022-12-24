@@ -39,4 +39,7 @@ export default StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 5,
   },
+  scroll: {
+    height: device.DEVICE_HEIGHT,
+  },
 });

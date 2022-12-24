@@ -41,7 +41,9 @@ const IBaseScreen: React.FC<Props> = props => {
       ) : null}
 
       <CMP.ISafeAreaView>
-        <CMP.IScrollView keyboardShouldPersistTaps="handled">
+        <CMP.IScrollView
+          keyboardShouldPersistTaps="handled"
+          style={styleLocal.scroll}>
           <CMP.IKeyboardAvoidingView enabled>
             {children}
           </CMP.IKeyboardAvoidingView>

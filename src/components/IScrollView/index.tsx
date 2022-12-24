@@ -1,5 +1,6 @@
 import React from 'react';
-import {ScrollView, ScrollViewProps, StyleProp, ViewStyle} from 'react-native';
+import {ScrollViewProps, StyleProp, ViewStyle} from 'react-native';
+import {ScrollView} from 'react-native-virtualized-view';
 
 interface Props extends ScrollViewProps {
   children?: React.ReactNode;

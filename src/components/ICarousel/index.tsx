@@ -1,6 +1,5 @@
 import React from 'react';
-import {StyleProp, ViewStyle} from 'react-native';
-import CMP from '../../components';
+import {StyleProp, ViewStyle, ScrollView} from 'react-native';
 
 interface Props {
   children?: React.ReactNode;
@@ -11,12 +10,12 @@ const ICarousel: React.FC<Props> = props => {
   const {children, style} = props;
 
   return (
-    <CMP.IScrollView
+    <ScrollView
       style={style}
       horizontal={true}
       showsHorizontalScrollIndicator={false}>
       {children}
-    </CMP.IScrollView>
+    </ScrollView>
   );
 };
 
