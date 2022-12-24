@@ -1,5 +1,11 @@
 import React from 'react';
-import {GestureResponderEvent, ViewProps} from 'react-native';
+import {
+  GestureResponderEvent,
+  StyleProp,
+  TextStyle,
+  ViewProps,
+  ViewStyle,
+} from 'react-native';
 import CMP from '../../components';
 
 import style from './style';
@@ -11,6 +17,9 @@ interface Props extends ViewProps {
   leftRound?: boolean;
   rightRound?: boolean;
   imgUri?: string;
+  styleView?: StyleProp<ViewStyle> | undefined;
+  styleText?: StyleProp<TextStyle> | undefined;
+  stylePresseable?: StyleProp<ViewStyle> | undefined;
 }
 
 const ILabelTicket: React.FC<Props> = props => {
@@ -21,6 +30,9 @@ const ILabelTicket: React.FC<Props> = props => {
     leftRound = false,
     rightRound = false,
     imgUri,
+    styleView,
+    styleText,
+    stylePresseable,
   } = props;
 
   return (
@@ -30,13 +42,16 @@ const ILabelTicket: React.FC<Props> = props => {
         style.container,
         leftRound && style.leftRound,
         rightRound && style.rightRound,
+        styleView,
       ]}>
-      <CMP.IText style={style.text}>{text}</CMP.IText>
+      <CMP.IText testID={testID + '_text'} style={[style.text, styleText]}>
+        {text}
+      </CMP.IText>
       {imgUri ? (
         <CMP.IPressable
           onPressIn={onPress}
           testID={testID + '_pressable'}
-          style={style.pressable}>
+          style={[style.pressable, stylePresseable]}>
           <CMP.IImage
             source={{
               uri: imgUri,

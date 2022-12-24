@@ -1,0 +1,32 @@
+{
+  "container": {
+    "flexDirection": "row",
+    "alignSelf": "baseline",
+    "backgroundColor": "#7BB3FE",
+    "alignItems": "center",
+    "height": 45
+  },
+  "rightRound": {
+    "borderTopRightRadius": 40,
+    "borderBottomRightRadius": 40,
+    "paddingRight": 10
+  },
+  "leftRound": {
+    "borderTopLeftRadius": 40,
+    "borderBottomLeftRadius": 40,
+    "paddingLeft": 10
+  },
+  "text": {
+    "marginLeft": 10,
+    "color": "#ffffff"
+  },
+  "pressable": {
+    "marginLeft": 10,
+    "marginRight": 10
+  },
+  "image": {
+    "width": 30,
+    "height": 30,
+    "tintColor": "#ffffff"
+  }
+}

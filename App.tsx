@@ -103,6 +103,7 @@ const App = () => {
       <CMP.ILabelTicket
         testID="tes"
         text="Label Ticket"
+        styleView={{marginTop: 10}}
         rightRound
         leftRound
         onPress={() => {
