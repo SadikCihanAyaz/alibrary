@@ -168,6 +168,12 @@ const App = () => {
         testID="testPressable">
         <CMP.IText>{'own methods'}</CMP.IText>
       </CMP.IPressable>
+      <CMP.IIconText
+        testID={'iconTest'}
+        source={{uri: 'https://reactjs.org/logo-og.png'}}
+        styleImage={{width: 25, height: 25}}
+        text={'fenerbahce'}
+      />
     </CMP.IBaseScreen>
   );
 };

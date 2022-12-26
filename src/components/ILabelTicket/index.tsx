@@ -39,7 +39,7 @@ const ILabelTicket: React.FC<Props> = props => {
     <CMP.IView
       testID={testID}
       style={[
-        style.container,
+        style.container as ViewStyle,
         leftRound && style.leftRound,
         rightRound && style.rightRound,
         styleView,

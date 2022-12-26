@@ -1,0 +1,12 @@
+{
+  "view": {
+    "justifyContent": "center",
+    "alignItems": "center",
+    "alignSelf": "baseline"
+  },
+  "image": {
+    "width": 40,
+    "height": 40
+  },
+  "text": {}
+}
