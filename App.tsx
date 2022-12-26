@@ -1,14 +1,9 @@
 import React from 'react';
 import {useForm} from 'react-hook-form';
-import {
-  GestureResponderEvent,
-  ImageSourcePropType,
-  ListRenderItemInfo,
-} from 'react-native';
-import CMP from './src/components';
+import {GestureResponderEvent} from 'react-native';
+import CMP, {ITeams} from './src/components';
 import IMG from './src/image';
 import CMPDEMO from './src/demo';
-import {Dimensions} from 'react-native';
 
 type FormValues = {
   firstName: string;
@@ -21,8 +16,6 @@ const App = () => {
     control,
     formState: {errors},
   } = useForm<FormValues>();
-
-  const devicewidth = Dimensions.get('window').width;
 
   const onSubmit = (data: FormValues) => {
     console.log('data', data);
@@ -67,10 +60,6 @@ const App = () => {
   const pressableTest = (event: GestureResponderEvent) => {
     console.log('pressableTest' + event);
     console.log(event);
-  };
-
-  const onPressableFlat = (item: any) => {
-    console.log(item);
   };
 
   return (
@@ -145,31 +134,6 @@ const App = () => {
         }}
       />
 
-      <CMP.ICarousel style={{backgroundColor: '#fff'}}>
-        <CMP.IButton
-          onPress={handleSubmit(onSubmit)}
-          buttonTitle="Test Button Title"
-          testID="btnI"
-        />
-        <CMP.IButton
-          onPress={handleSubmit(onSubmit)}
-          buttonTitle="Test Button Title"
-          buttonStyle={{height: 45, backgroundColor: '#fff'}}
-          buttonTextStyle={{color: '#7BB3FE'}}
-          testID="btnI"
-        />
-        <CMP.IButton
-          onPress={handleSubmit(onSubmit)}
-          buttonTitle="Test Button Title"
-          buttonStyle={{height: 45}}
-          testID="btnI"
-        />
-        <CMP.IButton
-          onPress={handleSubmit(onSubmit)}
-          buttonTitle="Test Button Title"
-          testID="btnI"
-        />
-      </CMP.ICarousel>
       <CMP.IPressable onPressIn={handleSubmit(onSubmit)} testID="testPressable">
         <CMP.IText>{'handleSubmit'}</CMP.IText>
       </CMP.IPressable>
@@ -185,46 +149,23 @@ const App = () => {
         styleImage={{width: 25, height: 25}}
         text={'fenerbahce'}
       />
-      <CMP.IFlatList
-        testID={'flat'}
-        numColumns={4}
+      <ITeams
+        testID="testID"
+        listKey={'teamName'}
+        numColumns={3}
+        onPress={item => console.log(item)}
         data={[
           {uri: {uri: 'https://reactjs.org/logo-og.png'}, team: 'Fenerbahce'},
           {uri: {uri: 'https://reactjs.org/logo-og.png'}, team: 'Galatasaray'},
           {uri: {uri: 'https://reactjs.org/logo-og.png'}, team: 'Beşiktaş'},
           {uri: {uri: 'https://reactjs.org/logo-og.png'}, team: 'Trabzonspor'},
-          {uri: {uri: 'https://reactjs.org/logo-og.png'}, team: 'Kayseri'},
+          {uri: {uri: 'https://reactjs.org/logo-og.png'}, team: 'Giresun'},
+          {uri: {uri: 'https://reactjs.org/logo-og.png'}, team: 'Çorum'},
+          {uri: {uri: 'https://reactjs.org/logo-og.png'}, team: 'Adana'},
+          {uri: {uri: 'https://reactjs.org/logo-og.png'}, team: 'Samsun'},
+          {uri: {uri: 'https://reactjs.org/logo-og.png'}, team: 'İstanbul'},
+          {uri: {uri: 'https://reactjs.org/logo-og.png'}, team: 'Başakşehir'},
         ]}
-        listKey="teamList"
-        keyExtractor={i => i.team}
-        renderItem={({
-          item,
-          index,
-        }: ListRenderItemInfo<{uri: ImageSourcePropType; team: string}>) => {
-          return (
-            <CMP.IPressable
-              testID={'pressable' + index}
-              style={{
-                backgroundColor: 'red',
-                width: devicewidth / 4,
-                height: devicewidth / 4,
-                justifyContent: 'center',
-                alignContent: 'center',
-                alignSelf: 'center',
-              }}
-              onPressIn={() => onPressableFlat(item)}>
-              <CMP.IIconText
-                testID={'iconTest'}
-                source={item.uri}
-                styleView={{
-                  alignSelf: 'center',
-                }}
-                styleImage={{width: 33, height: 33}}
-                text={item.team}
-              />
-            </CMP.IPressable>
-          );
-        }}
       />
     </CMP.IBaseScreen>
   );

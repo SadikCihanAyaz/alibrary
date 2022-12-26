@@ -1,0 +1,14 @@
+{
+  "presseable": {
+    "justifyContent": "center",
+    "alignContent": "center",
+    "alignSelf": "center"
+  },
+  "iconText": {
+    "alignSelf": "center"
+  },
+  "selectedItem": {
+    "backgroundColor": "#BFDAFE",
+    "borderRadius": 40
+  }
+}
