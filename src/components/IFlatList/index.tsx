@@ -1,15 +1,14 @@
 import React from 'react';
-import {FlatList, ViewProps, FlatListProps} from 'react-native';
+import {FlatList, FlatListProps} from 'react-native';
 
-interface Props extends FlatListProps<ViewProps> {
+interface Props extends FlatListProps<any> {
   testID: string;
-  data: any[];
 }
 
 const IFlatList: React.FC<Props> = props => {
-  const {testID, data} = props;
+  const {testID} = props;
 
-  return <FlatList {...props} testID={testID + 'flatList'} data={data} />;
+  return <FlatList {...props} testID={testID + 'flatList'} />;
 };
 
 export default IFlatList;

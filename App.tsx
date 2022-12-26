@@ -1,9 +1,14 @@
 import React from 'react';
 import {useForm} from 'react-hook-form';
-import {GestureResponderEvent} from 'react-native';
+import {
+  GestureResponderEvent,
+  ImageSourcePropType,
+  ListRenderItemInfo,
+} from 'react-native';
 import CMP from './src/components';
 import IMG from './src/image';
 import CMPDEMO from './src/demo';
+import {Dimensions} from 'react-native';
 
 type FormValues = {
   firstName: string;
@@ -16,6 +21,8 @@ const App = () => {
     control,
     formState: {errors},
   } = useForm<FormValues>();
+
+  const devicewidth = Dimensions.get('window').width;
 
   const onSubmit = (data: FormValues) => {
     console.log('data', data);
@@ -60,6 +67,10 @@ const App = () => {
   const pressableTest = (event: GestureResponderEvent) => {
     console.log('pressableTest' + event);
     console.log(event);
+  };
+
+  const onPressableFlat = (item: any) => {
+    console.log(item);
   };
 
   return (
@@ -173,6 +184,47 @@ const App = () => {
         source={{uri: 'https://reactjs.org/logo-og.png'}}
         styleImage={{width: 25, height: 25}}
         text={'fenerbahce'}
+      />
+      <CMP.IFlatList
+        testID={'flat'}
+        numColumns={4}
+        data={[
+          {uri: {uri: 'https://reactjs.org/logo-og.png'}, team: 'Fenerbahce'},
+          {uri: {uri: 'https://reactjs.org/logo-og.png'}, team: 'Galatasaray'},
+          {uri: {uri: 'https://reactjs.org/logo-og.png'}, team: 'Beşiktaş'},
+          {uri: {uri: 'https://reactjs.org/logo-og.png'}, team: 'Trabzonspor'},
+          {uri: {uri: 'https://reactjs.org/logo-og.png'}, team: 'Kayseri'},
+        ]}
+        listKey="teamList"
+        keyExtractor={i => i.team}
+        renderItem={({
+          item,
+          index,
+        }: ListRenderItemInfo<{uri: ImageSourcePropType; team: string}>) => {
+          return (
+            <CMP.IPressable
+              testID={'pressable' + index}
+              style={{
+                backgroundColor: 'red',
+                width: devicewidth / 4,
+                height: devicewidth / 4,
+                justifyContent: 'center',
+                alignContent: 'center',
+                alignSelf: 'center',
+              }}
+              onPressIn={() => onPressableFlat(item)}>
+              <CMP.IIconText
+                testID={'iconTest'}
+                source={item.uri}
+                styleView={{
+                  alignSelf: 'center',
+                }}
+                styleImage={{width: 33, height: 33}}
+                text={item.team}
+              />
+            </CMP.IPressable>
+          );
+        }}
       />
     </CMP.IBaseScreen>
   );
