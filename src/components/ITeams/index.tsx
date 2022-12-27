@@ -49,6 +49,7 @@ const ITeams: React.FC<Props> = props => {
               testID={'iconTest'}
               source={item.uri}
               styleView={styleLocal.iconText as ViewStyle}
+              styleText={styleLocal.text as ViewStyle}
               styleImage={{
                 width: devicewidth / (numColumns * 2),
                 height: devicewidth / (numColumns * 2),

@@ -7,6 +7,9 @@
   "iconText": {
     "alignSelf": "center"
   },
+  "text": {
+    "color": "#787C81"
+  },
   "selectedItem": {
     "backgroundColor": "#BFDAFE",
     "borderRadius": 40

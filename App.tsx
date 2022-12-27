@@ -155,7 +155,10 @@ const App = () => {
         numColumns={3}
         onPress={item => console.log(item)}
         data={[
-          {uri: {uri: 'https://reactjs.org/logo-og.png'}, team: 'Fenerbahce'},
+          {
+            uri: {uri: 'https://reactjs.org/logo-og.png'},
+            team: 'Fenerbahce',
+          },
           {uri: {uri: 'https://reactjs.org/logo-og.png'}, team: 'Galatasaray'},
           {uri: {uri: 'https://reactjs.org/logo-og.png'}, team: 'Beşiktaş'},
           {uri: {uri: 'https://reactjs.org/logo-og.png'}, team: 'Trabzonspor'},

@@ -7,8 +7,12 @@ interface Props extends TextProps {
 }
 
 const IText = (props: Props): JSX.Element => {
-  const {children} = props;
-  return <Text {...props}>{children}</Text>;
+  const {children, style} = props;
+  return (
+    <Text {...props} style={[{fontFamily: 'Cochin'}, style]}>
+      {children}
+    </Text>
+  );
 };
 
 export default IText;
