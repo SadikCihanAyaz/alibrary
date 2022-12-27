@@ -18,6 +18,7 @@ import ILabelTicket from './ILabelTicket';
 import IPressable from './IPressable';
 import IIconText from './IIconText';
 import ITeams from './ITeams';
+import IImageBackground from './IImageBackground';
 
 export default {
   FBButton,
@@ -40,6 +41,7 @@ export default {
   IPressable,
   IIconText,
   ITeams,
+  IImageBackground,
 };
 
 export {default as FBButton} from './FBButton';
@@ -62,3 +64,4 @@ export {default as ILabelTicket} from './ILabelTicket';
 export {default as IPressable} from './IPressable';
 export {default as IIconText} from './IIconText';
 export {default as ITeams} from './ITeams';
+export {default as IImageBackground} from './IImageBackground';

@@ -4,6 +4,7 @@ import {GestureResponderEvent} from 'react-native';
 import CMP, {ITeams} from './src/components';
 import IMG from './src/image';
 import CMPDEMO from './src/demo';
+import ICompetitive from './src/components/ICompetitive';
 
 type FormValues = {
   firstName: string;
@@ -156,19 +157,61 @@ const App = () => {
         onPress={item => console.log(item)}
         data={[
           {
-            uri: {uri: 'https://reactjs.org/logo-og.png'},
+            logo: IMG.Fenerbahce,
             team: 'Fenerbahce',
           },
-          {uri: {uri: 'https://reactjs.org/logo-og.png'}, team: 'Galatasaray'},
-          {uri: {uri: 'https://reactjs.org/logo-og.png'}, team: 'Beşiktaş'},
-          {uri: {uri: 'https://reactjs.org/logo-og.png'}, team: 'Trabzonspor'},
-          {uri: {uri: 'https://reactjs.org/logo-og.png'}, team: 'Giresun'},
-          {uri: {uri: 'https://reactjs.org/logo-og.png'}, team: 'Çorum'},
-          {uri: {uri: 'https://reactjs.org/logo-og.png'}, team: 'Adana'},
-          {uri: {uri: 'https://reactjs.org/logo-og.png'}, team: 'Samsun'},
-          {uri: {uri: 'https://reactjs.org/logo-og.png'}, team: 'İstanbul'},
-          {uri: {uri: 'https://reactjs.org/logo-og.png'}, team: 'Başakşehir'},
+          {
+            logo: IMG.Galatasaray,
+            team: 'Galatasaray',
+          },
+          {
+            logo: IMG.Besiktas,
+            team: 'Beşiktaş',
+          },
+          {
+            logo: IMG.Cancel,
+            team: 'Trabzonspor',
+          },
+          {
+            logo: IMG.Cancel,
+            team: 'Rize',
+          },
+          {
+            logo: IMG.Cancel,
+            team: 'Samsun',
+          },
+          {
+            logo: IMG.Cancel,
+            team: 'Çorum',
+          },
+          {
+            logo: IMG.Cancel,
+            team: 'Adana',
+          },
+          {
+            logo: IMG.Cancel,
+            team: 'Fatih',
+          },
+          {
+            logo: IMG.Cancel,
+            team: 'Başakşehir',
+          },
         ]}
+      />
+      <ICompetitive
+        testID="testId2"
+        homeTeam={{
+          name: 'Fenerbahçe',
+          logo: IMG.Besiktas,
+        }}
+        guestTeam={{
+          name: 'Galatasaray',
+          logo: IMG.Fenerbahce,
+        }}
+        date={'23.06.2022'}
+        hours={'17.00 am'}
+        place={'Fenerbahçe Şükrü Saracoglu Stadyum'}
+        backgroundImage={IMG.Pitch}
       />
     </CMP.IBaseScreen>
   );

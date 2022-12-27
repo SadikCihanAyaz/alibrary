@@ -47,7 +47,7 @@ const ITeams: React.FC<Props> = props => {
             onPressIn={selectedTeam.bind(undefined, item)}>
             <CMP.IIconText
               testID={'iconTest'}
-              source={item.uri}
+              source={{uri: item.logo}}
               styleView={styleLocal.iconText as ViewStyle}
               styleText={styleLocal.text as ViewStyle}
               styleImage={{
