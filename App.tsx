@@ -213,6 +213,7 @@ const App = () => {
         place={'Fenerbahçe Şükrü Saracoglu Stadyum'}
         backgroundImage={IMG.Pitch}
       />
+      <CMP.ICompetitiveList testID="competitiveList" data={[]} listKey="comp" />
     </CMP.IBaseScreen>
   );
 };

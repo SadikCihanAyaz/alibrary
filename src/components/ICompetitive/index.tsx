@@ -1,5 +1,5 @@
 import React from 'react';
-import {Dimensions} from 'react-native';
+import {Dimensions, ViewProps} from 'react-native';
 import CMP from '../../components';
 import styleLocal from './style';
 
@@ -40,7 +40,7 @@ const ICompetitive: React.FC<Props> = props => {
         source={{uri: homeTeam.logo}}
         text={homeTeam.name}
         styleView={[
-          styleLocal.homeView,
+          styleLocal.homeView as ViewProps,
           {
             top: devicewidth / 10,
             left: devicewidth / 5,
@@ -52,7 +52,7 @@ const ICompetitive: React.FC<Props> = props => {
         source={{uri: guestTeam.logo}}
         text={guestTeam.name}
         styleView={[
-          styleLocal.guestView,
+          styleLocal.guestView as ViewProps,
           {
             top: devicewidth / 10,
             right: devicewidth / 5,
@@ -62,7 +62,7 @@ const ICompetitive: React.FC<Props> = props => {
 
       <CMP.IView
         style={[
-          styleLocal.bottomView,
+          styleLocal.bottomView as ViewProps,
           {
             width: devicewidth,
           },
