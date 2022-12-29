@@ -34,7 +34,10 @@ const ICompetitive: React.FC<Props> = props => {
       source={{
         uri: backgroundImage,
       }}
-      style={{width: devicewidth, height: devicewidth / 2}}>
+      style={{
+        width: devicewidth,
+        height: devicewidth / 2,
+      }}>
       <CMP.IIconText
         testID={testID + '_iconTextHome'}
         source={{uri: homeTeam.logo}}

@@ -1,4 +1,5 @@
 import React, {useMemo} from 'react';
+import {GestureResponderEvent} from 'react-native';
 import CMP from '../../components';
 import {ICompetitive} from '../../types/ICompetitive';
 //import styleLocal from '../ICompetitiveList/style';
@@ -7,10 +8,11 @@ interface Props {
   testID: string;
   data: ICompetitive[];
   listKey: string;
+  onPressBtn: (event: any) => void;
 }
 
 const ICompetitiveList: React.FC<Props> = props => {
-  const {testID, data, listKey} = props;
+  const {testID, onPressBtn, data, listKey} = props;
 
   const getSortedState = (dataCompetitive: ICompetitive[]) =>
     dataCompetitive.sort((a: ICompetitive, b: ICompetitive) => a.id - b.id);
@@ -23,6 +25,10 @@ const ICompetitiveList: React.FC<Props> = props => {
     return data;
   }, [data]);
 
+  const onPress = (item: GestureResponderEvent) => {
+    onPressBtn(item);
+  };
+
   return (
     <CMP.IFlatList
       testID={testID}
@@ -34,7 +40,7 @@ const ICompetitiveList: React.FC<Props> = props => {
           <CMP.IPressable
             key={'listKey' + index}
             testID={testID + '_pressable_' + index}
-            onPressIn={() => null}>
+            onPressIn={onPress.bind(this, item)}>
             <CMP.ICompetitive
               testID={testID + '_competitive_' + index}
               {...item}

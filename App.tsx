@@ -240,6 +240,9 @@ const App = () => {
         testID="competitiveList"
         data={competitiveList}
         listKey="comp"
+        onPressBtn={item => {
+          console.log(item);
+        }}
       />
     </CMP.IBaseScreen>
   );
