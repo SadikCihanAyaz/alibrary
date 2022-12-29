@@ -1,43 +1,38 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import CMP from '../../components';
-
-type HomeTeam = {
-  name: string;
-  logo: string;
-};
-type GuestTeam = {
-  name: string;
-  logo: string;
-};
-
-type Competitive = {
-  testID: string;
-  homeTeam: HomeTeam;
-  guestTeam: GuestTeam;
-  date: string;
-  hours: string;
-  place: string;
-  backgroundImage: string;
-};
+import {ICompetitive} from '../../types/ICompetitive';
+//import styleLocal from '../ICompetitiveList/style';
 
 interface Props {
   testID: string;
-  data: Competitive[];
+  data: ICompetitive[];
   listKey: string;
 }
 
 const ICompetitiveList: React.FC<Props> = props => {
   const {testID, data, listKey} = props;
 
+  const getSortedState = (dataCompetitive: ICompetitive[]) =>
+    dataCompetitive.sort((a: ICompetitive, b: ICompetitive) => a.id - b.id);
+
+  const sortedDatas = useMemo(() => {
+    if (data) {
+      return getSortedState(data);
+    }
+
+    return data;
+  }, [data]);
+
   return (
     <CMP.IFlatList
       testID={testID}
-      data={data}
+      data={sortedDatas}
       listKey={listKey}
-      keyExtractor={i => i.team}
+      keyExtractor={i => i.id}
       renderItem={({item, index}) => {
         return (
           <CMP.IPressable
+            key={'listKey' + index}
             testID={testID + '_pressable_' + index}
             onPressIn={() => null}>
             <CMP.ICompetitive

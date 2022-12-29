@@ -6,6 +6,8 @@ import IMG from './src/image';
 import CMPDEMO from './src/demo';
 import ICompetitive from './src/components/ICompetitive';
 
+import {ICompetitive as TypeICompetitive} from './src/types/ICompetitive';
+
 type FormValues = {
   firstName: string;
   lastName: string;
@@ -17,6 +19,27 @@ const App = () => {
     control,
     formState: {errors},
   } = useForm<FormValues>();
+
+  const competitiveList: TypeICompetitive[] = [
+    {
+      id: 1,
+      homeTeam: {name: 'Fener', logo: IMG.Fenerbahce},
+      guestTeam: {name: 'Beisk', logo: IMG.Besiktas},
+      date: '10.10.2022',
+      hours: '17:00 pm',
+      place: 'PLACE_OF_STADIUM 2',
+      backgroundImage: IMG.Pitch,
+    },
+    {
+      id: 2,
+      homeTeam: {name: 'Fener', logo: IMG.Fenerbahce},
+      guestTeam: {name: 'Beisk', logo: IMG.Besiktas},
+      date: '10.10.2022',
+      hours: '17:00 pm',
+      place: 'PLACE_OF_STADIUM 4',
+      backgroundImage: IMG.Pitch,
+    },
+  ];
 
   const onSubmit = (data: FormValues) => {
     console.log('data', data);
@@ -213,7 +236,11 @@ const App = () => {
         place={'Fenerbahçe Şükrü Saracoglu Stadyum'}
         backgroundImage={IMG.Pitch}
       />
-      <CMP.ICompetitiveList testID="competitiveList" data={[]} listKey="comp" />
+      <CMP.ICompetitiveList
+        testID="competitiveList"
+        data={competitiveList}
+        listKey="comp"
+      />
     </CMP.IBaseScreen>
   );
 };

@@ -1,20 +1,3 @@
 {
-  "imageBackground": {},
-  "homeView": {
-    "position": "absolute"
-  },
-  "guestView": {
-    "position": "absolute"
-  },
-  "bottomView": {
-    "position": "absolute",
-    "bottom": 0,
-    "alignItems": "center",
-    "backgroundColor": "black",
-    "opacity": 0.8,
-    "padding": 10
-  },
-  "text": {
-    "color": "#fff"
-  }
+  "imageBackground": {}
 }
