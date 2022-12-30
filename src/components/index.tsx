@@ -21,6 +21,7 @@ import ITeams from './ITeams';
 import IImageBackground from './IImageBackground';
 import ICompetitive from './ICompetitive';
 import ICompetitiveList from './ICompetitiveList';
+import ITicket from './ITicket';
 
 export default {
   FBButton,
@@ -46,6 +47,7 @@ export default {
   IImageBackground,
   ICompetitive,
   ICompetitiveList,
+  ITicket,
 };
 
 export {default as FBButton} from './FBButton';
@@ -70,3 +72,4 @@ export {default as IIconText} from './IIconText';
 export {default as ITeams} from './ITeams';
 export {default as IImageBackground} from './IImageBackground';
 export {default as ICompetitiveList} from './ICompetitiveList';
+export {default as ITicket} from './ITicket';

@@ -1,0 +1,36 @@
+{
+  "container": {
+    "flexDirection": "column",
+    "flex": 1,
+    "borderTopWidth": 0.2,
+    "borderBottomWidth": 0.2,
+    "borderTopColor": "#BFDAFE",
+    "borderBottomColor": "#BFDAFE",
+
+    "borderLeftWidth": 20,
+
+    "borderTopLeftRadius": 10,
+    "borderBottomLeftRadius": 10,
+    "borderLeftColor": "#BFDAFE",
+    "shadowOffset": {
+      "width": 5,
+      "height": 10
+    },
+    "shadowOpacity": 0.25,
+    "shadowRadius": 5
+  },
+  "topView": {"flexDirection": "row", "padding": 10},
+  "centerView": {"flexDirection": "row", "padding": 10},
+  "bottomView": {"flexDirection": "row", "padding": 10},
+  "topTicketTypeView": {"flex": 1, "alignSelf": "center"},
+  "topTicketTypeText": {"color": "#787C81"},
+  "topTicketPriceView": {"flexDirection": "column"},
+  "topTicketPriceText": {"color": "#787C81"},
+  "topTicketPriceText1": {"color": "#E94F56", "textAlign": "right"},
+  "imageInfo": {"width": 30, "height": 30},
+  "labelTicketView": {"flex": 1, "alignSelf": "center"},
+  "bottomBuyView": {"flexDirection": "column"},
+  "buyButtonViewStyle": {"backgroundColor": "#E94F56"},
+  "butButtonTextStyle": {"marginLeft": 20, "marginRight": 20}
+
+}

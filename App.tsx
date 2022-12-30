@@ -6,7 +6,7 @@ import IMG from './src/image';
 import CMPDEMO from './src/demo';
 import ICompetitive from './src/components/ICompetitive';
 
-import {ICompetitive as TypeICompetitive} from './src/types/ICompetitive';
+import {ICompetitive as TypeICompetitive, TicketType} from './src/types/';
 
 type FormValues = {
   firstName: string;
@@ -19,6 +19,15 @@ const App = () => {
     control,
     formState: {errors},
   } = useForm<FormValues>();
+
+  const ticketType: TicketType = {
+    category: 'Spor Toto Tribune',
+    priceText: 'Ticket Price',
+    price: '850.00',
+    priceCurrency: 'TL',
+    remainTicketCount: '3 ticket left',
+    buyTitle: 'Buy',
+  };
 
   const competitiveList: TypeICompetitive[] = [
     {
@@ -244,6 +253,7 @@ const App = () => {
           console.log(item);
         }}
       />
+      <CMP.ITicket testID="ticket" ticket={ticketType} />
     </CMP.IBaseScreen>
   );
 };
