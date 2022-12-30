@@ -1,4 +1,5 @@
 export type TicketType = {
+  id: number /**id number */;
   category: string /** Migros Kapalı */;
   priceText: string /** Bilet Fiyatı */;
   price: string /** 900.00 */;

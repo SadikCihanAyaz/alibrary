@@ -21,6 +21,7 @@ const App = () => {
   } = useForm<FormValues>();
 
   const ticketType: TicketType = {
+    id: 1,
     category: 'Spor Toto Tribune',
     priceText: 'Ticket Price',
     price: '850.00',
@@ -28,6 +29,27 @@ const App = () => {
     remainTicketCount: '3 ticket left',
     buyTitle: 'Buy',
   };
+
+  const ticketTypeList: TicketType[] = [
+    {
+      id: 1,
+      category: 'Spor Toto Tribune',
+      priceText: 'Ticket Price',
+      price: '850.00',
+      priceCurrency: 'TL',
+      remainTicketCount: '3 ticket left',
+      buyTitle: 'Buy',
+    },
+    {
+      id: 2,
+      category: 'Spor Toto Tribune',
+      priceText: 'Ticket Price',
+      price: '900.00',
+      priceCurrency: 'TL',
+      remainTicketCount: '2 ticket left',
+      buyTitle: 'Buy',
+    },
+  ];
 
   const competitiveList: TypeICompetitive[] = [
     {
@@ -254,6 +276,7 @@ const App = () => {
         }}
       />
       <CMP.ITicket testID="ticket" ticket={ticketType} />
+      <CMP.ITicketList testID="ticketList" data={ticketTypeList} />
     </CMP.IBaseScreen>
   );
 };
