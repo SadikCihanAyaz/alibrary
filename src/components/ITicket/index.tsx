@@ -9,10 +9,15 @@ interface Props {
   testID: string;
   styleView?: ViewProps;
   ticket: TicketType;
+  onPress: (ticket: TicketType) => void;
 }
 
 const ITicket: React.FC<Props> = props => {
-  const {testID, styleView, ticket} = props;
+  const {testID, styleView, ticket, onPress} = props;
+
+  function onPressBtn() {
+    onPress(ticket);
+  }
 
   return (
     <CMP.IView
@@ -51,7 +56,7 @@ const ITicket: React.FC<Props> = props => {
         </CMP.IView>
         <CMP.IView style={[styleLocal.bottomBuyView] as ViewProps}>
           <CMP.IButton
-            onPress={() => null}
+            onPress={onPressBtn}
             buttonTitle={ticket?.buyTitle}
             testID={testID + 'buy'}
             buttonStyle={[styleLocal.buyButtonViewStyle] as ViewProps}

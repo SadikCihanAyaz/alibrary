@@ -5,10 +5,11 @@ import {TicketType} from '../../types/';
 interface Props {
   testID: string;
   data: TicketType[];
+  onPress: (ticket: TicketType) => void;
 }
 
 const ITicketList: React.FC<Props> = props => {
-  const {testID, data} = props;
+  const {testID, data, onPress} = props;
 
   return (
     <CMP.IFlatList
@@ -17,7 +18,13 @@ const ITicketList: React.FC<Props> = props => {
       listKey={testID}
       keyExtractor={i => i.id}
       renderItem={({item, index}) => {
-        return <CMP.ITicket testID={testID + 'ticket' + index} ticket={item} />;
+        return (
+          <CMP.ITicket
+            testID={testID + 'ticket' + index}
+            onPress={onPress}
+            ticket={item}
+          />
+        );
       }}
     />
   );

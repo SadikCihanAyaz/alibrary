@@ -26,7 +26,7 @@ const App = () => {
     priceText: 'Ticket Price',
     price: '850.00',
     priceCurrency: 'TL',
-    remainTicketCount: '3 ticket left',
+    remainTicketCount: '8 ticket left',
     buyTitle: 'Buy',
   };
 
@@ -275,8 +275,22 @@ const App = () => {
           console.log(item);
         }}
       />
-      <CMP.ITicket testID="ticket" ticket={ticketType} />
-      <CMP.ITicketList testID="ticketList" data={ticketTypeList} />
+      <CMP.ITicket
+        testID="ticket"
+        ticket={ticketType}
+        onPress={item => {
+          console.log('test ticketList');
+          console.log(item);
+        }}
+      />
+      <CMP.ITicketList
+        testID="ticketList"
+        data={ticketTypeList}
+        onPress={item => {
+          console.log('test ticketList');
+          console.log(item);
+        }}
+      />
     </CMP.IBaseScreen>
   );
 };
